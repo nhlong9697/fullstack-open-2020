@@ -1,0 +1,15 @@
+note over browser:
+new note as JSON-data containing both the content of the new note and timestamp
+is sent from browser to server through the following HTTP method
+(Content-Type header of the request tells the server that 
+the included data is represented in the JSON format)
+end note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: HTTP with status code 201 - created
+note over server:
+This time the server does not ask for a redirect, 
+the browser stays on the same page, and it sends no further HTTP requests
+
+The SPA version of the app does not send the form data in the traditional way, 
+but instead uses the JavaScript code it fetched from the server
+end note
