@@ -17,15 +17,20 @@ const Content = (props) => {
   const parts = props.parts.map((part, index) => {
     return <Part key={index} name={part.name} exercise={part.exercises} />;
   });
+
   return <div>{parts}</div>;
 };
+
 const Total = (props) => {
   let total = 0;
+
   props.parts.forEach((part) => {
     total += part.exercises;
   });
+
   return <p>Number of exercises {total}</p>;
 };
+
 const App = () => {
   const course = {
     name: "Half Stack application development",
@@ -44,6 +49,7 @@ const App = () => {
       },
     ],
   };
+
   return (
     <div>
       <Header course={course.name} />
